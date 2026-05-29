@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACV | Fresh Coco-Milk</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght=300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif { font-family: 'Playfair Display', serif; }
+    </style>
+</head>
+<body class="bg-[#FAF8F5] text-zinc-800 antialiased relative overflow-x-hidden">
+
+    <div id="brand-popup" class="hidden fixed inset-0 bg-black/60 backdrop-blur-md z-50 flex items-center justify-center p-4 transition-all duration-300">
+        <div class="bg-[#070D0A] text-white border border-[#B08968]/30 max-w-md w-full rounded-3xl p-8 relative shadow-2xl space-y-6 transform scale-100 transition-transform">
+            <button onclick="closeBrandPopup()" class="absolute top-5 right-5 text-zinc-400 hover:text-white transition-colors cursor-pointer text-xl font-light">&times;</button>
+            
+            <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                <div class="w-9 h-9 rounded-xl bg-[#D4A373] text-neutral-950 flex items-center justify-center shadow-md">
+                    <svg class="w-5 h-5 text-neutral-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-dasharray="2 2"/>
+                        <path d="M12 6C12 6 8 9.5 8 13.5C8 15.5 10 17.5 12 17.5C14 17.5 16 15.5 16 13.5C16 9.5 12 6 12 6Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-black tracking-tight uppercase">ACV Corporate Registry</h3>
+            </div>
+
+            <div class="space-y-4">
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-[#D4A373] font-bold block mb-1">Corporate Entity</span>
+                    <p class="text-zinc-200 text-base font-medium leading-relaxed">Asa Chanukya Vijay .Group of Industries.</p>
+                </div>
+                <div>
+                    <span class="text-[10px] uppercase tracking-widest text-[#D4A373] font-bold block mb-1">Communications & Gateway Address</span>
+                    <a href="mailto:sriramchanukya@gmail.com" class="text-emerald-400 font-mono text-sm hover:underline hover:text-emerald-300 transition-colors">sriramchanukya@gmail.com</a>
+                </div>
+            </div>
+
+            <button onclick="closeBrandPopup()" class="w-full bg-[#B08968] text-neutral-950 font-bold uppercase tracking-wider text-xs py-3.5 rounded-xl hover:bg-[#C7A384] transition-all cursor-pointer">
+                Dismiss Record
+            </button>
+        </div>
+    </div>
+
+
+    <div id="landing-view" class="transition-all duration-500">
+        <nav class="fixed top-0 left-0 w-full bg-[#FAF8F5]/80 backdrop-blur-md z-40 border-b border-[#2B1E14]/5">
+            <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                <button onclick="showBrandPopup()" class="flex items-center gap-3 group bg-transparent border-none p-0 cursor-pointer text-left focus:outline-none">
+                    <div class="w-9 h-9 rounded-xl bg-[#2B1E14] text-white flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105">
+                        <svg class="w-5 h-5 text-[#FAF8F5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-dasharray="2 2"/>
+                            <path d="M12 6C12 6 8 9.5 8 13.5C8 15.5 10 17.5 12 17.5C14 17.5 16 15.5 16 13.5C16 9.5 12 6 12 6Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-black tracking-tighter text-[#2B1E14] uppercase border-b-2 border-transparent group-hover:border-[#6F4E37] transition-all">ACV</span>
+                </button>
+
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-[#4A3525]/70">
+                    <a href="#benefits" class="hover:text-[#2B1E14] transition-colors">Benefits</a>
+                    <a href="#legacy" class="hover:text-[#2B1E14] transition-colors">Our Legacy</a>
+                </div>
+                <button onclick="navigateTo('order')" class="bg-[#6F4E37] text-white text-xs font-semibold tracking-wider uppercase px-5 py-3 rounded-full hover:bg-[#4A3525] transition-all cursor-pointer">
+                    Get Fresh Coco
+                </button>
+            </div>
+        </nav>
+
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            <div class="max-w-4xl mx-auto px-6 text-center z-10">
+                <span class="inline-block text-xs font-bold tracking-widest uppercase text-[#8B5E3C] mb-4">100% Raw & Plant-Based</span>
+                <h1 class="text-5xl md:text-7xl font-light tracking-tight text-[#2B1E14] mb-6 leading-tight">
+                    Experience the purity of <span class="font-semibold italic text-[#6F4E37]">Fresh Coco-Milk</span>.
+                </h1>
+                <p class="text-lg md:text-xl text-zinc-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                    Nutrient-rich, dairy-free perfection crafted in micro-batches. No additives, no thickeners—just pure coconut goodness delivered straight to you.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <button onclick="navigateTo('order')" class="w-full sm:w-auto bg-[#6F4E37] text-white font-medium text-sm px-8 py-4 rounded-full hover:bg-[#4A3525] transition-all shadow-sm cursor-pointer">
+                        Order Fresh Now
+                    </button>
+                    <a href="#legacy" class="w-full sm:w-auto border border-[#6F4E37]/20 text-[#4A3525] font-medium text-sm px-8 py-4 rounded-full hover:bg-white transition-all text-center">
+                        Our Legacy
+                    </a>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(240,230,220,0.7)_0%,transparent_70%)] pointer-events-none"></div>
+        </section>
+
+        <section id="benefits" class="py-32 bg-white border-y border-[#2B1E14]/5">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-xl mx-auto mb-20">
+                    <h2 class="text-3xl font-semibold tracking-tight text-[#2B1E14] mb-4">Purely Better</h2>
+                    <p class="text-zinc-500 font-light">We balance traditional harvesting with absolute cleanliness to give you the highest quality possible.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="space-y-4 p-6 rounded-2xl hover:bg-[#FAF8F5] transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-[#F5EFEA] text-[#6F4E37] flex items-center justify-center text-xl group-hover:bg-[#6F4E37] group-hover:text-white transition-all">🌴</div>
+                        <h3 class="text-xl font-medium text-[#2B1E14]">Zero Preservatives</h3>
+                        <p class="text-zinc-500 font-light winding-relaxed">Completely unpasteurized and free from artificial stabilizers, sugar, or chemical additives.</p>
+                    </div>
+                    <div class="space-y-4 p-6 rounded-2xl hover:bg-[#FAF8F5] transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-[#F5EFEA] text-[#6F4E37] flex items-center justify-center text-xl group-hover:bg-[#6F4E37] group-hover:text-white transition-all">🥥</div>
+                        <h3 class="text-xl font-medium text-[#2B1E14]">Cold-Extracted</h3>
+                        <p class="text-zinc-500 font-light leading-relaxed">Pressed meticulously in cold environments to preserve vital nutrients, healthy MCT fats, and raw flavor.</p>
+                    </div>
+                    <div class="space-y-4 p-6 rounded-2xl hover:bg-[#FAF8F5] transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-[#F5EFEA] text-[#6F4E37] flex items-center justify-center text-xl group-hover:bg-[#6F4E37] group-hover:text-white transition-all">🥛</div>
+                        <h3 class="text-xl font-medium text-[#2B1E14]">Micro-Batch Fresh</h3>
+                        <p class="text-zinc-500 font-light leading-relaxed">Made to order daily so you receive it at peak vitality. True freshness you can actually taste.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="legacy" class="py-32 bg-white">
+            <div class="max-w-3xl mx-auto px-6 space-y-8">
+                <div class="space-y-2 text-center">
+                    <span class="text-xs font-bold tracking-widest uppercase text-[#8B5E3C]">The ACV Chronicles</span>
+                    <h2 class="text-4xl font-serif tracking-tight text-[#2B1E14] leading-tight">Our Legacy</h2>
+                </div>
+                
+                <p class="text-zinc-600 font-light leading-relaxed text-base">
+                    In 2026, the trio launched ACV—a brand name cleverly derived from the first initials of Asa Latha, Chanukya, and Vijay. The startup transforms discarded coconut ingredients into high-protein, zero-waste coconut milk products. By uniting their strengths, they solved a major environmental problem: the massive waste generated daily by local coconut vendors. Today, ACV is a staple plant-based dairy alternative in households nationwide.
+                </p>
+
+                <div class="pt-8 border-t border-[#2B1E14]/10 space-y-4">
+                    <h3 class="text-2xl font-serif text-[#6F4E37] font-medium text-center sm:text-left">The Breakthrough</h3>
+                    <p class="text-zinc-600 font-light leading-relaxed text-base">
+                        The idea spark came during a family trip to a coastal region, where Chanukya noticed vendors dumping tons of coconut shells and leftover water daily. Chanukya, a food technology graduate, realized this "waste" still held incredible nutritional value. Back home, Asa Latha used her traditional culinary expertise to formulate an ultra-creamy coconut milk recipe fortified with natural plant proteins. Vijay then stepped in, designing a custom, low-cost extraction machine in their backyard to process the ingredients efficiently.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-[#2B1E14] text-white py-12 border-t border-[#4A3525]">
+            <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#D4A373]/40 gap-4">
+                <p>&copy; 2026 ACV Fresh. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="https://instagram.com/theonenonlychanu" target="_blank" class="text-white hover:text-[#D4A373] transition-colors flex items-center gap-1 font-medium">
+                        📸 Instagram: @theonenonlychanu
+                    </a>
+                    <a href="#" class="hover:text-[#D4A373] transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+    <div id="order-view" class="hidden min-h-screen bg-[#070D0A] text-zinc-100 font-light relative">
+        
+        <nav class="w-full bg-[#070D0A]/80 backdrop-blur-md border-b border-white/5 h-20 sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+                <button onclick="navigateTo('landing')" class="text-xs font-semibold tracking-widest uppercase text-zinc-400 hover:text-white transition-colors cursor-pointer flex items-center gap-2">
+                    ← Back To Home
+                </button>
+                
+                <button onclick="showBrandPopup()" class="flex items-center gap-3 bg-transparent border-none p-0 cursor-pointer text-left focus:outline-none group">
+                    <div class="w-9 h-9 rounded-xl bg-[#D4A373] text-neutral-950 flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105">
+                        <svg class="w-5 h-5 text-neutral-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke-dasharray="2 2"/>
+                            <path d="M12 6C12 6 8 9.5 8 13.5C8 15.5 10 17.5 12 17.5C14 17.5 16 15.5 16 13.5C16 9.5 12 6 12 6Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="text-2xl font-black tracking-tighter text-white uppercase block">ACV <span class="text-[10px] font-serif font-normal text-[#D4A373] tracking-widest uppercase block -mt-1.5 group-hover:text-white transition-colors">Atelier</span></span>
+                </button>
+
+                <div class="w-24"></div> </div>
+        </nav>
+
+        <div id="auth-screen" class="max-w-md mx-auto px-6 pt-20 pb-32 flex flex-col justify-center min-h-[calc(100vh-80px)] text-center">
+            <div class="space-y-4 mb-10 animate-fade-in">
+                <span class="text-[11px] font-bold tracking-widest uppercase text-[#D4A373]">Welcome To The Reserve</span>
+                <h2 class="text-4xl font-serif font-light tracking-tight text-white leading-tight">Glad you joined our family</h2>
+                <p class="text-zinc-400 text-sm font-light">Create your private culinary profile to manage daily cold-pressed elixir shipments.</p>
+            </div>
+
+            <div class="space-y-3">
+                <button onclick="handleLogin('Google')" class="w-full bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs font-semibold tracking-wider uppercase p-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-3">
+                    <span class="text-base">🌐</span> Continue with Google
+                </button>
+                <button onclick="handleLogin('Facebook')" class="w-full bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs font-semibold tracking-wider uppercase p-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-3">
+                    <span class="text-base">👤</span> Continue with Facebook
+                </button>
+                <div class="relative py-4 flex items-center justify-center">
+                    <div class="absolute inset-0 flex items-center"><div class="w-full border-t border-white/5"></div></div>
+                    <span class="relative bg-[#070D0A] px-3 text-[10px] text-zinc-500 tracking-widest uppercase">Or</span>
+                </div>
+                <form onsubmit="event.preventDefault(); handleLogin('Email');" class="space-y-3 text-left">
+                    <input type="email" placeholder="Enter secure email address" required class="w-full bg-white/5 text-sm p-4 rounded-xl border border-white/10 focus:outline-none focus:border-[#B08968] transition-all text-white placeholder-zinc-600">
+                    <button type="submit" class="w-full bg-[#B08968] text-neutral-950 hover:bg-[#C7A384] text-xs font-bold tracking-wider uppercase p-4 rounded-xl transition-all cursor-pointer shadow-lg shadow-black/50">
+                        Access Ordering System
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div id="shop-screen" class="hidden max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <div class="lg:col-span-7 space-y-8">
+                <div class="border-b border-white/5 pb-6">
+                    <h2 class="text-3xl font-serif text-white mb-2">The Collection</h2>
+                    <p class="text-zinc-400 text-sm">Select products to build out your current batch order.</p>
+                </div>
+                
+                <div id="luxury-product-list" class="space-y-4">
+                    </div>
+            </div>
+
+            <div class="lg:col-span-5 bg-white/[0.02] border border-white/5 rounded-3xl p-8 h-fit space-y-6 shadow-2xl backdrop-blur-md">
+                <h3 class="text-lg font-serif text-white border-b border-white/5 pb-4">Your Order Manifest</h3>
+                
+                <div id="manifest-items" class="space-y-4 max-h-60 overflow-y-auto pr-2"></div>
+
+                <div class="bg-white/[0.02] border border-white/5 rounded-xl p-4 space-y-3">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-[#D4A373]">Available Privileges</h4>
+                    
+                    <div id="coupon-first-box" class="flex items-center justify-between text-xs bg-[#B08968]/10 border border-[#B08968]/20 p-3 rounded-lg">
+                        <div>
+                            <p class="text-white font-medium">Welcome Gift: Flat 40% Off</p>
+                            <p class="text-zinc-400 text-[11px] mt-0.5">Use code: <span class="text-[#D4A373] font-mono font-bold">FIRST40</span></p>
+                        </div>
+                        <button onclick="applyCoupon('FIRST40')" class="text-[11px] font-bold text-[#D4A373] hover:text-[#C7A384] underline cursor-pointer">Apply</button>
+                    </div>
+
+                    <div class="flex items-center justify-between text-xs bg-zinc-900/40 border border-white/5 p-3 rounded-lg">
+                        <div>
+                            <p class="text-zinc-200 font-medium">Connoisseur Reward: 50% Off</p>
+                            <p id="loyalty-counter-text" class="text-zinc-400 text-[11px] mt-0.5 font-light">Loading milestones...</p>
+                        </div>
+                        <button id="loyalty-coupon-btn" disabled onclick="applyCoupon('LOYALTY5')" class="text-[11px] font-bold text-zinc-600 cursor-not-allowed underline">Locked</button>
+                    </div>
+
+                    <div id="coupon-status" class="text-xs font-medium text-[#D4A373] hidden pt-1"></div>
+                </div>
+
+                <form id="luxury-checkout-form" class="space-y-3 pt-2">
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-zinc-400 mb-2">Delivery Manifest</h4>
+                    <input type="text" id="lux-name" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 text-sm p-3.5 rounded-xl outline-none focus:border-[#B08968] transition-all text-white placeholder-zinc-600">
+                    <input type="email" id="lux-email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 text-sm p-3.5 rounded-xl outline-none focus:border-[#B08968] transition-all text-white placeholder-zinc-600">
+                    <input type="text" id="lux-address" placeholder="Shipping Destination" required class="w-full bg-white/5 border border-white/10 text-sm p-3.5 rounded-xl outline-none focus:border-[#B08968] transition-all text-white placeholder-zinc-600">
+                </form>
+
+                <div class="space-y-2 pt-4 border-t border-white/5 text-sm">
+                    <div class="flex justify-between text-zinc-400 font-light">
+                        <span>Curated Selection Subtotal</span>
+                        <span id="lux-subtotal">₹0</span>
+                    </div>
+                    <div id="discount-row" class="flex justify-between text-[#D4A373] font-light hidden">
+                        <span>Privilege Discount Applied</span>
+                        <span id="lux-discount">-₹0</span>
+                    </div>
+                    <div class="flex justify-between text-white font-medium text-lg pt-2">
+                        <span>Total Balance</span>
+                        <span id="lux-total" class="text-[#D4A373] font-semibold">₹0</span>
+                    </div>
+                </div>
+
+                <button onclick="executeLuxuryOrder()" class="w-full bg-[#B08968] text-neutral-950 hover:bg-[#C7A384] font-bold tracking-wider text-xs uppercase py-4 rounded-xl transition-all shadow-xl shadow-black/20 cursor-pointer">
+                    Authorize Order Shipments
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Static Data Matrix
+        const products = {
+            'classic-500': { name: 'ACV Classic Original', volume: '500ml Glass Decanter', price: 220, label: 'Bestseller', desc: '100% cold-extracted pure premium coconut milk marrow. Pressed to order.' },
+            'tender-500': { name: 'Tender Coco-Hydrate', volume: '500ml Glass Decanter', price: 200, label: 'Pure Hydration', desc: 'Satin micro-batch milk lightened with fresh volcanic tender coconut water enzymes.' },
+            'honey-250': { name: 'Raw Honey Elixir', volume: '250ml Flacon', price: 140, label: 'Limited Run', desc: 'Infused with untamed organic forest honey elements and cold scrapings of vanilla pods.' }
+        };
+
+        // State Machine Storage
+        let cart = [];
+        let ordersPlacedCount = 0; 
+        let activeDiscountPercentage = 0;
+        let activeCouponCode = "";
+
+        // Brand Popup Controllers
+        function showBrandPopup() {
+            const popup = document.getElementById('brand-popup');
+            popup.classList.remove('hidden');
+        }
+
+        function closeBrandPopup() {
+            const popup = document.getElementById('brand-popup');
+            popup.classList.add('hidden');
+        }
+
+        // SPA Router logic
+        function navigateTo(targetView) {
+            const landing = document.getElementById('landing-view');
+            const orderView = document.getElementById('order-view');
+            
+            if (targetView === 'order') {
+                landing.classList.add('hidden');
+                orderView.classList.remove('hidden');
+                window.scrollTo({top: 0});
+            } else {
+                orderView.classList.add('hidden');
+                landing.classList.remove('hidden');
+            }
+        }
+
+        // Simulates security gateway authentication 
+        function handleLogin(method) {
+            document.getElementById('auth-screen').classList.add('hidden');
+            document.getElementById('shop-screen').classList.remove('hidden');
+            evaluateLoyaltyRewardsEngine();
+            renderLuxuryInterface();
+        }
+
+        // Adjust Quantities
+        function alterItemQuantity(id, changeAmount) {
+            const existingMatch = cart.find(item => item.id === id);
+            
+            if (existingMatch) {
+                existingMatch.quantity += changeAmount;
+                if (existingMatch.quantity <= 0) {
+                    cart = cart.filter(item => item.id !== id);
+                }
+            } else if (changeAmount > 0) {
+                cart.push({ ...products[id], id, quantity: 1 });
+            }
+            
+            renderLuxuryInterface();
+        }
+
+        // Apply Coupons
+        function applyCoupon(code) {
+            if (cart.length === 0) {
+                showCouponMessage("Add items to your selection before activating privileges.", true);
+                return;
+            }
+            
+            if (code === 'FIRST40') {
+                activeDiscountPercentage = 40;
+                activeCouponCode = "FIRST40 (40% Off Applied)";
+                showCouponMessage("Welcome privilege activated: Flat 40% Off", false);
+            } else if (code === 'LOYALTY5') {
+                if (ordersPlacedCount > 0 && ordersPlacedCount % 5 === 0) {
+                    activeDiscountPercentage = 50;
+                    activeCouponCode = "LOYALTY5 (50% Connoisseur Off Applied)";
+                    showCouponMessage("Connoisseur milestone activated: Flat 50% Off", false);
+                } else {
+                    showCouponMessage("This tracking privilege remains locked.", true);
+                    return;
+                }
+            }
+            renderLuxuryInterface();
+        }
+
+        function showCouponMessage(text, isError) {
+            const statusEl = document.getElementById('coupon-status');
+            statusEl.classList.remove('hidden', 'text-[#D4A373]', 'text-amber-500');
+            statusEl.classList.add(isError ? 'text-amber-500' : 'text-[#D4A373]');
+            statusEl.innerText = text;
+        }
+
+        // Loyalty Engine Remaining Counter Calculations
+        function evaluateLoyaltyRewardsEngine() {
+            const counterText = document.getElementById('loyalty-counter-text');
+            const loyaltyBtn = document.getElementById('loyalty-coupon-btn');
+            
+            const nextMilestoneRemnants = 5 - (ordersPlacedCount % 5);
+            
+            if (ordersPlacedCount > 0 && ordersPlacedCount % 5 === 0) {
+                counterText.innerHTML = `🌟 <span class="text-[#D4A373] font-bold">Unlocked!</span> Ready for use.`;
+                loyaltyBtn.disabled = false;
+                loyaltyBtn.classList.remove('text-zinc-600', 'cursor-not-allowed');
+                loyaltyBtn.classList.add('text-[#D4A373]', 'hover:text-[#C7A384]', 'cursor-pointer');
+            } else {
+                counterText.innerText = `${nextMilestoneRemnants} order(s) remaining to unlock code LOYALTY5`;
+                loyaltyBtn.disabled = true;
+                loyaltyBtn.classList.add('text-zinc-600', 'cursor-not-allowed');
+                loyaltyBtn.classList.remove('text-[#D4A373]', 'hover:text-[#C7A384]', 'cursor-pointer');
+            }
+        }
+
+        // Dynamic Curation UI Layout Builders
+        function renderLuxuryInterface() {
+            // Part A: Render Catalog Grid
+            const catalogContainer = document.getElementById('luxury-product-list');
+            let catalogHtml = '';
+            
+            for (const [id, prod] of Object.entries(products)) {
+                const itemInCart = cart.find(i => i.id === id);
+                const currentQty = itemInCart ? itemInCart.quantity : 0;
+                
+                let actionableButtonBlock = '';
+                if (currentQty > 0) {
+                    actionableButtonBlock = `
+                        <div class="flex items-center border border-[#B08968]/30 rounded-xl overflow-hidden bg-white/5">
+                            <button onclick="alterItemQuantity('${id}', -1)" class="px-4 py-3 text-zinc-400 hover:bg-white/5 hover:text-white transition-colors cursor-pointer font-bold text-xs">-</button>
+                            <span class="text-[#B08968] text-xs font-bold w-10 text-center">${currentQty}</span>
+                            <button onclick="alterItemQuantity('${id}', 1)" class="px-4 py-3 text-zinc-400 hover:bg-white/5 hover:text-white transition-colors cursor-pointer font-bold text-xs">+</button>
+                        </div>
+                    `;
+                } else {
+                    actionableButtonBlock = `
+                        <button onclick="alterItemQuantity('${id}', 1)" class="bg-[#B08968] text-neutral-950 hover:bg-[#C7A384] text-xs font-semibold tracking-wider px-6 py-3 rounded-xl transition-all cursor-pointer">
+                            Add Selection
+                        </button>
+                    `;
+                }
+
+                catalogHtml += `
+                    <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 hover:border-[#B08968]/20 transition-all">
+                        <div class="space-y-1 flex-1">
+                            <div class="flex items-center gap-3 flex-wrap">
+                                <h3 class="text-lg font-serif font-light text-white">${prod.name}</h3>
+                                <span class="text-[9px] font-bold tracking-widest uppercase px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-400">${prod.volume}</span>
+                            </div>
+                            <p class="text-zinc-500 text-xs font-light leading-relaxed max-w-xl">${prod.desc}</p>
+                        </div>
+                        <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-4 w-full sm:w-auto border-t sm:border-t-0 pt-4 sm:pt-0 border-white/5">
+                            <span class="text-xl font-medium text-[#B08968] font-serif">₹${prod.price}</span>
+                            ${actionableButtonBlock}
+                        </div>
+                    </div>
+                `;
+            }
+            catalogContainer.innerHTML = catalogHtml;
+
+            // Part B: Render Order Sidebar Manifest
+            const manifestContainer = document.getElementById('manifest-items');
+            if (cart.length === 0) {
+                manifestContainer.innerHTML = `<p class="text-zinc-600 text-xs font-light py-8 text-center italic">No items checked for current batch curation.</p>`;
+                document.getElementById('lux-subtotal').innerText = '₹0';
+                document.getElementById('lux-total').innerText = '₹0';
+                document.getElementById('discount-row').classList.add('hidden');
+                return;
+            }
+
+            let manifestHtml = '';
+            let rawSubtotal = 0;
+            
+            cart.forEach(item => {
+                const linesCost = item.price * item.quantity;
+                rawSubtotal += linesCost;
+                manifestHtml += `
+                    <div class="flex items-center justify-between text-xs border-b border-white/5 pb-3">
+                        <div>
+                            <p class="text-white font-medium">${item.name}</p>
+                            <p class="text-zinc-500 text-[11px] mt-0.5">₹${item.price} × ${item.quantity}</p>
+                        </div>
+                        <span class="text-zinc-300 font-medium font-serif">₹${linesCost}</span>
+                    </div>
+                `;
+            });
+            manifestContainer.innerHTML = manifestHtml;
+
+            // Compute Financial Matrix Metrics
+            let finalDiscountAmount = Math.round(rawSubtotal * (activeDiscountPercentage / 100));
+            let netTotalInvoice = rawSubtotal - finalDiscountAmount;
+
+            document.getElementById('lux-subtotal').innerText = `₹${rawSubtotal}`;
+            if (finalDiscountAmount > 0) {
+                document.getElementById('discount-row').classList.remove('hidden');
+                document.getElementById('lux-discount').innerText = `-₹${finalDiscountAmount}`;
+            } else {
+                document.getElementById('discount-row').classList.add('hidden');
+            }
+            document.getElementById('lux-total').innerText = `₹${netTotalInvoice}`;
+        }
+
+        // Final Checkout Submission Execution
+        function executeLuxuryOrder() {
+            if (cart.length === 0) {
+                alert("Your Manifest is empty. Please choose elixirs to process your allocation.");
+                return;
+            }
+            
+            const clientForm = document.getElementById('luxury-checkout-form');
+            if (!clientForm.reportValidity()) return;
+
+            const name = document.getElementById('lux-name').value;
+            const dest = document.getElementById('lux-address').value;
+            const finalPrice = document.getElementById('lux-total').innerText;
+            
+            alert(`⚜️ Private Shipment Authorized!\n\nThank you ${name}.\nYour premium micro-batch order total of ${finalPrice} is scheduled for urgent cold-chain dispatch to:\n${dest}`);
+            
+            ordersPlacedCount += 1;
+            
+            // Remove first-time box on order submission complete
+            document.getElementById('coupon-first-box').classList.add('hidden');
+            
+            // Reset local execution fields
+            cart = [];
+            activeDiscountPercentage = 0;
+            activeCouponCode = "";
+            document.getElementById('coupon-status').classList.add('hidden');
+            clientForm.reset();
+            
+            evaluateLoyaltyRewardsEngine();
+            renderLuxuryInterface();
+            navigateTo('landing');
+        }
+    </script>
+</body>
+</html>
